@@ -1,37 +1,44 @@
-import React, { Component } from 'react';
-import './App.css';
-import KegList from './components/KegList/KegList.js';
-import WhatsOnTap from './components/WhatsOnTap/WhatsOnTap.js';
+import React from "react";
+import "./App.css";
+import KegList from "./components/KegList/KegList.js";
+import WhatsOnTap from "./components/WhatsOnTap/WhatsOnTap.js";
 
 const kegs = [
-  { name: 'Stella Artois' },
-  { name: 'Tuborg' },
-  { name: 'Krusovice' },
-  { name: 'Soproni' },
+    {name: 'Stella Artois'},
+    {name: 'Tuborg'},
+    {name: 'Krusovice'},
+    {name: 'Soproni'},
 ];
 
-const keg = {
-  name: 'Staropramen',
-  daysOld: 3
-};
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <div className="Column">
-          <KegList
-            kegs={kegs}
-          />
+export default class App extends React.Component {
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            kegOnTap: []
+        }
+    }
+
+    addKegToTap(name) {
+        this.setState({
+            kegOnTap: name
+        });
+    }
+
+    render() {
+        return <div className="app">
+            <div className="keg-list">
+                <KegList
+                    kegs={kegs}
+                    onKegSelected={keg => this.addKegToTap(keg)}
+                />
+            </div>
+            <div className="whats-on-tap">
+                <WhatsOnTap
+                    keg={this.state.kegOnTap}
+                />
+            </div>
         </div>
-        <div className="Column">
-          <WhatsOnTap
-            keg={keg}
-          />
-        </div>
-      </div>
-    );
-  }
+    }
 }
-
-export default App;

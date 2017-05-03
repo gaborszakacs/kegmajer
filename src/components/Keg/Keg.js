@@ -1,13 +1,11 @@
-import React from 'react';
-import './Keg.css';
+import React from "react";
+import "./Keg.css";
 
-const Keg = (props) => {
-  return (
-    <li>
-      {props.keg.name}
-      <button>Add to Tap</button>
-    </li>
-  );
-};
-
-export default Keg;
+export default class Keg extends React.Component {
+    render() {
+        return <div className="keg">
+            <span className="name">{this.props.keg.name}</span>
+            <button className="add" onClick={i => this.props.onResult(this.props.keg.name)}>Add to Tap</button>
+        </div>
+    }
+}

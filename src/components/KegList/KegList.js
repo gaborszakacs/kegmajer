@@ -1,22 +1,14 @@
-import React from 'react';
-import './KegList.css';
-import Keg from './../Keg/Keg.js';
-import KegInput from './../KegInput/KegInput.js';
+import "./KegList.css";
+import React from "react";
+import Keg from "./../Keg/Keg.js";
 
-const KegList = (props) => {
-  const listItems = props.kegs.map((keg, i) =>
-    <Keg keg={keg} key={i} />
-  );
-
-  return (
-    <div className="KegListContainer">
-      <h1>Kegs in Stock</h1>
-      <ul>
-        {listItems}
-        <KegInput />
-      </ul>
-    </div>
-  );
-};
-
-export default KegList;
+export default class KegList extends React.Component {
+    render() {
+        return <div className="KegListContainer">
+            <h1>Kegs in Stock</h1>
+            {this.props.kegs.map((keg, index) => (
+                <Keg keg={keg} key={index} onResult={i => this.props.onKegSelected(i)}/>
+            ))}
+        </div>
+    }
+}

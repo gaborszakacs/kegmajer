@@ -1,7 +1,25 @@
-.App {
-  display: flex;
+.app {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #eee;
 }
 
-.Column {
-  flex: 0 1 50%;
+.keg-list {
+    position: absolute;
+    width: 50%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    border-right: 1px dashed grey;
+}
+
+.whats-on-tap {
+    position: absolute;
+    width: 50%;
+    top: 0;
+    bottom: 0;
+    right: 0;
 }
