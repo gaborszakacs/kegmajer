@@ -1,18 +1,34 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import KegList from './components/KegList/KegList.js';
+import WhatsOnTap from './components/WhatsOnTap/WhatsOnTap.js';
+
+const kegs = [
+  { name: 'Stella Artois' },
+  { name: 'Tuborg' },
+  { name: 'Krusovice' },
+  { name: 'Soproni' },
+];
+
+const keg = {
+  name: 'Staropramen',
+  daysOld: 3
+};
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
+        <div className="Column">
+          <KegList
+            kegs={kegs}
+          />
         </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <div className="Column">
+          <WhatsOnTap
+            keg={keg}
+          />
+        </div>
       </div>
     );
   }
