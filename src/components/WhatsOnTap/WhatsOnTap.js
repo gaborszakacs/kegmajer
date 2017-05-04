@@ -1,15 +1,12 @@
-import React from 'react';
 import './WhatsOnTap.css';
+import React from "react";
 
-const WhatsOnTap = (props) => {
-  return (
-    <div className="WhatsOnTapContainer">
-      <h1>What's on Tap?</h1>
-      <div className="KegOnTap">{props.keg.name}</div>
-      <div>🍻 for {props.keg.daysOld} days now 🍻</div>
-      <button>Remove from Tap</button>
-    </div>
-  );
-};
-
-export default WhatsOnTap;
+export default class WhatsOnTap extends React.Component {
+    render() {
+        return <div className="WhatsOnTapContainer">
+            <h1>What's on Tap?</h1>
+            <div className="KegOnTap">{this.props.keg}</div>
+            <div>🍻 for 0 days now 🍻</div>
+        </div>
+    }
+}
