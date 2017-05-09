@@ -1,20 +1,20 @@
 .keg {
-    width: 90%;
-    margin: 15px auto;
-    background: white;
-    padding: 15px;
-    box-shadow: 0px 0px 5px 5px #eee;
-    border: 1px solid #ddd;
+  width: 90%;
+  margin: 15px auto;
+  background: white;
+  padding: 15px;
+  box-shadow: 0px 0px 5px 5px #eee;
+  border: 1px solid #ddd;
 }
 
 .keg span.name {
-    text-transform: uppercase;
+  text-transform: uppercase;
 }
 
 .keg button.add {
-    float: right;
-    border: none;
-    background: lightgreen;
-    padding: 5px;
-    color: white;
+  float: right;
+  border: none;
+  background: lightgreen;
+  padding: 5px;
+  color: white;
 }
